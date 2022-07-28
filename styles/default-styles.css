@@ -167,6 +167,10 @@ details:active {
     padding-bottom: 10px;
     font-size: 1.2em;
 }
+#main-portrait{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #recentText {
     text-align: center;
