@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+    <!-- Load polyfills to support older browsers -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+
+    <!-- Personal CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Cinzel:700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="styles/default-styles.css" />
+
+    <title>Weston Marshall Portfolio</title>
+</head>
+
+<body>
+    <div class="container" id="root">
+        <div class="sticky-top" id="navbar">
+            <div class="row">
+                <div class="col-lg" style="color: #111111">empty</div>
+            </div>
+            <nav class="row text-center">
+                <div class="col"><a href="#navbar">Top</a></div>
+                <div class="col"></div>
+                <div class="col"><a href="#intro">Projects</a></div>
+                <div class="col"></div>
+                <div class="col"><a href="#contact">Contact</a></div>
+            </nav>
+            <div class="row" id="top">
+                <div class="col-lg" style="color: #111111">empty</div>
+            </div>
+        </div>
+        <header class="row">
+            <div class="col-lg" style="font-family: 'Cinzel', serif">
+                <h1 id="name">Weston Marshall</h1>
+                <p id="title"><em>Tools Programmer / Engine Programmer</em></p>
+            </div>
+        </header>
+        <header class="row">
+            <div class="col-auto text-center">
+                <img src="../portfolioMedia/media/portrait.jpg" id="portraitTop" alt="Weston Marshall">
+            </div>
+        </header>
+        <hr>
+        <div class="row">
+            <div class="col-lg text-center">
+                <h2>Who Am I?</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <aside class="col-lg" id="intro">{{goal}}</aside>
+        </div>
+        <hr>
+        <div class="row" id="project-section">
+            <aside class="col-lg">
+                <h2>What Do I Do?</h2>
+            </aside>
+        </div>
+        <hr>
+
+        <div v-html="selectedProject.display"></div>
+
+        <hr>
+
+        <div class="row">
+            <aside class="col-lg">
+
+                <h2 class="col-md text-center">Click to see details</h2>
+                <br>
+
+                <!-- Project Select -->
+                <div is="project-select" v-for="(project, index) in projects" v-bind:name="project.name" v-bind:image="project.image" v-bind:description="project.description" v-bind:index="index"></div>
+
+                <hr>
+                <div class="row" id="contact">
+                    <div class="col-md text-center" id="refrences">
+                        <p>Phone: 860-302-3608</p>
+                        <p>Email: MarshallJWeston@gmail.com</p>
+                        <hr>
+                        <p><a href="https://www.linkedin.com/in/weston-marshall-733802154/">Linked In</a></p>
+                        <p><a href="https://rit-csm.symplicity.com/profiles/weston.marshall">Career Connect</a></p>
+                        <p><a href="media/WestonJMarshall_Resume2021.pdf">Resume</a></p>
+                        <div class="col-md">
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="row">
+                            <div class="col-md text-center">
+                                <h2>Contact <br> Me</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img src="../portfolioMedia/media/portrait.jpg" id="portraitBottom" alt="Weston Marshall">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="src/portfolio-components.js"></script>
+    <script src="src/main.js"></script>
+
+</body>
+
+</html>
